@@ -1,5 +1,13 @@
 package org.iesalandalus.programacion.reservasaulas.modelo.dao;
 
+import java.io.EOFException;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -13,6 +21,7 @@ import org.iesalandalus.programacion.reservasaulas.modelo.dominio.permanencia.Pe
 
 public class Reservas {
 
+	private static final String NOMBRE_FICHERO_RESERVAS = "ficheros" + File.separator + "reservas.dat";
 	private List<Reserva> coleccionReservas;
 	private static final float MAX_PUNTOS_PROFESOR_MES = 200;
 
@@ -192,5 +201,41 @@ public class Reservas {
 			}
 		}
 		return true;
+	}
+
+	public void leer() {
+		File lectura = new File(NOMBRE_FICHERO_RESERVAS);
+		try (ObjectInputStream entrada = new ObjectInputStream(new FileInputStream(lectura))) {
+			Reserva reserva = null;
+			do {
+				reserva = (Reserva) entrada.readObject();
+				insertar(reserva);
+			} while (reserva != null);
+		} catch (ClassNotFoundException e) {
+			System.out.println("No se encuentra la clase a leer.");
+		} catch (FileNotFoundException e) {
+			System.out.println("No se puede abrir el fichero de Reservas.");
+		} catch (EOFException e) {
+			System.out.println("El fichero de Reservas se leyó con éxito.");
+		} catch (IOException e) {
+			System.out.println("Error inesperado de E/S.");
+		} catch (OperationNotSupportedException e) {
+			System.out.println(e.getMessage());
+		}
+	}
+
+	public void escribir() {
+		File escritura = new File(NOMBRE_FICHERO_RESERVAS);
+		try (ObjectOutputStream salida = new ObjectOutputStream(new FileOutputStream(escritura))) {
+			for (Reserva reserva : coleccionReservas) {
+				salida.writeObject(reserva);
+			}
+			System.out.println("Fichero de Reservas se escribió con éxito.");
+		} catch (FileNotFoundException e) {
+			System.out.println("No se ha podido crear el fichero de Reservas.");
+		} catch (IOException e) {
+			System.out.println("Error inesperado de E/S.");
+			e.printStackTrace();
+		}
 	}
 }

@@ -1,5 +1,5 @@
 package org.iesalandalus.programacion.reservasaulas.modelo.dao;
-/*
+
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNull;
@@ -20,9 +20,9 @@ import org.iesalandalus.programacion.reservasaulas.modelo.dominio.permanencia.Pe
 import org.iesalandalus.programacion.reservasaulas.modelo.dominio.permanencia.PermanenciaPorTramo;
 import org.iesalandalus.programacion.reservasaulas.modelo.dominio.permanencia.Tramo;
 import org.junit.Test;
-*/
+
 public class ReservasTest {
-/*	
+
 	private static final String NOMBRE_PROFESOR1 = "José Ramón";
 	private static final String NOMBRE_PROFESOR2 = "Andrés";
 	private static final String CORREO = "a@b.cc";
@@ -42,7 +42,7 @@ public class ReservasTest {
 	private static final LocalTime HORA2 = LocalTime.of(11, 0);
 	private static final String ERROR_EXCEPCION = "Debería haber saltado la excepción.";
 	private static final String ERROR_NO_EXCEPCION = "No debería haber saltado la excepción.";
-	
+
 	private static final Profesor PROFESOR1 = new Profesor(NOMBRE_PROFESOR1, CORREO);
 	private static final Profesor PROFESOR2 = new Profesor(NOMBRE_PROFESOR2, CORREO);
 	private static final Aula AULA1 = new Aula(NOMBRE_AULA1, PUESTOS1);
@@ -58,13 +58,12 @@ public class ReservasTest {
 	private static final Reserva RESERVA4 = new Reserva(PROFESOR1, AULA2, PERMANENCIA2);
 	private static final Reserva RESERVA5 = new Reserva(PROFESOR2, AULA1, PERMANENCIA1);
 
-
 	@Test
 	public void constructorDefectoTest() {
 		Reservas reservas = new Reservas();
 		assertEquals(0, reservas.getNumReservas());
 	}
-	
+
 	@Test
 	public void constructorCopiaValidoTest() {
 		Reservas reservas1 = new Reservas();
@@ -73,7 +72,7 @@ public class ReservasTest {
 		assertEquals(0, reservas2.getNumReservas());
 		assertFalse(reservas1.getReservas() == reservas2.getReservas());
 	}
-	
+
 	@Test
 	public void constructorCopiaNoValidoTest() {
 		Reservas reservas = null;
@@ -86,7 +85,7 @@ public class ReservasTest {
 			assertNull(reservas1);
 		}
 	}
-	
+
 	@Test
 	public void insertarUnaValidaTest() {
 		Reservas reservas = new Reservas();
@@ -98,7 +97,7 @@ public class ReservasTest {
 			fail(ERROR_NO_EXCEPCION);
 		}
 	}
-	
+
 	@Test
 	public void insertarNulaTest() {
 		Reservas reservas = new Reservas();
@@ -112,7 +111,7 @@ public class ReservasTest {
 			fail(ERROR_NO_EXCEPCION);
 		}
 	}
-	
+
 	@Test
 	public void insertarReservaRepetidaTest() {
 		Reservas reservas = new Reservas();
@@ -126,9 +125,9 @@ public class ReservasTest {
 		} catch (OperationNotSupportedException e) {
 			assertEquals("La reserva ya existe.", e.getMessage());
 			assertEquals(1, reservas.getNumReservas());
-		} 
+		}
 	}
-	
+
 	@Test
 	public void insertarReservaDiferentePermanenciaTest() {
 		Reservas reservas = new Reservas();
@@ -142,7 +141,7 @@ public class ReservasTest {
 		} catch (OperationNotSupportedException e) {
 			assertEquals("Ya se ha realizado una reserva por hora para este día y aula.", e.getMessage());
 			assertEquals(1, reservas.getNumReservas());
-		} 
+		}
 		reservas = new Reservas();
 		try {
 			reserva = new Reserva(PROFESOR1, AULA3, PERMANENCIA4);
@@ -153,9 +152,9 @@ public class ReservasTest {
 		} catch (OperationNotSupportedException e) {
 			assertEquals("Ya se ha realizado una reserva por tramo para este día y aula.", e.getMessage());
 			assertEquals(1, reservas.getNumReservas());
-		} 
+		}
 	}
-	
+
 	@Test
 	public void insertarReservaMesActualTest() {
 		Reservas reservas = new Reservas();
@@ -167,9 +166,9 @@ public class ReservasTest {
 		} catch (OperationNotSupportedException e) {
 			assertEquals("Sólo se pueden hacer reservas para el mes que viene o posteriores.", e.getMessage());
 			assertEquals(0, reservas.getNumReservas());
-		} 
+		}
 	}
-	
+
 	@Test
 	public void insertarPuntosSobrepasadosTest() {
 		Reservas reservas = new Reservas();
@@ -187,7 +186,7 @@ public class ReservasTest {
 		} catch (OperationNotSupportedException e) {
 			assertEquals("Esta reserva excede los puntos máximos por mes para dicho profesor.", e.getMessage());
 			assertEquals(3, reservas.getNumReservas());
-		} 
+		}
 		try {
 			reserva = new Reserva(PROFESOR1, AULA3, new PermanenciaPorTramo(DIA3, Tramo.MANANA));
 			reservas.insertar(reserva);
@@ -201,9 +200,9 @@ public class ReservasTest {
 		} catch (OperationNotSupportedException e) {
 			assertEquals("Esta reserva excede los puntos máximos por mes para dicho profesor.", e.getMessage());
 			assertEquals(6, reservas.getNumReservas());
-		} 
+		}
 	}
-	
+
 	@Test
 	public void insertarRepetidaTest() {
 		Reservas reservas = new Reservas();
@@ -224,7 +223,7 @@ public class ReservasTest {
 			assertEquals(1, reservas.getNumReservas());
 		}
 	}
-	
+
 	@Test
 	public void insertarTresValidoTest() {
 		Reservas reservas = new Reservas();
@@ -242,7 +241,7 @@ public class ReservasTest {
 			fail(ERROR_NO_EXCEPCION);
 		}
 	}
-	
+
 	@Test
 	public void getReservasTest() {
 		Reservas reservas = new Reservas();
@@ -256,7 +255,7 @@ public class ReservasTest {
 			fail(ERROR_NO_EXCEPCION);
 		}
 	}
-	
+
 	private Reservas insertarCuatro() {
 		Reservas reservas = new Reservas();
 		try {
@@ -269,7 +268,7 @@ public class ReservasTest {
 		}
 		return reservas;
 	}
-	
+
 	@Test
 	public void borrarPrincipioValidoTest() {
 		Reservas reservas = insertarCuatro();
@@ -285,7 +284,7 @@ public class ReservasTest {
 			fail(ERROR_NO_EXCEPCION);
 		}
 	}
-	
+
 	@Test
 	public void borrarMedioValidoTest() {
 		Reservas reservas = insertarCuatro();
@@ -301,7 +300,7 @@ public class ReservasTest {
 			fail(ERROR_NO_EXCEPCION);
 		}
 	}
-	
+
 	@Test
 	public void borrarFinalValidoTest() {
 		Reservas reservas = insertarCuatro();
@@ -317,7 +316,7 @@ public class ReservasTest {
 			fail(ERROR_NO_EXCEPCION);
 		}
 	}
-	
+
 	@Test
 	public void borrarNuloTest() {
 		Reservas reservas = insertarCuatro();
@@ -331,7 +330,7 @@ public class ReservasTest {
 			fail(ERROR_NO_EXCEPCION);
 		}
 	}
-	
+
 	@Test
 	public void borrarNoValidoTest() {
 		Reservas reservas = insertarCuatro();
@@ -352,7 +351,7 @@ public class ReservasTest {
 			assertEquals(4, reservas.getNumReservas());
 		}
 	}
-	
+
 	@Test
 	public void borrarInsertarTest() {
 		Reservas reservas = insertarCuatro();
@@ -372,13 +371,13 @@ public class ReservasTest {
 			fail(ERROR_NO_EXCEPCION);
 		}
 	}
-	
+
 	@Test
 	public void buscarNuloTest() {
 		Reservas reservas = insertarCuatro();
 		assertNull(reservas.buscar(null));
 	}
-	
+
 	@Test
 	public void representarTest() {
 		Reservas reservas = insertarCuatro();
@@ -388,7 +387,7 @@ public class ReservasTest {
 		assertEquals(RESERVA3.toString(), representacion.get(2));
 		assertEquals(RESERVA4.toString(), representacion.get(3));
 	}
-	
+
 	@Test
 	public void getReservasProfesorTest() {
 		Reservas reservas = insertarCuatro();
@@ -401,7 +400,7 @@ public class ReservasTest {
 		reservasProfesor = reservas.getReservasProfesor(PROFESOR2);
 		assertEquals(0, reservasProfesor.size());
 	}
-	
+
 	@Test
 	public void getReservasAulaTest() {
 		Reservas reservas = insertarCuatro();
@@ -412,7 +411,7 @@ public class ReservasTest {
 		reservasAula = reservas.getReservasAula(AULA3);
 		assertEquals(0, reservasAula.size());
 	}
-	
+
 	@Test
 	public void getReservasPermanenciaTest() {
 		Reservas reservas = insertarCuatro();
@@ -423,7 +422,7 @@ public class ReservasTest {
 		reservasPermanencia = reservas.getReservasPermanencia(PERMANENCIA3);
 		assertEquals(0, reservasPermanencia.size());
 	}
-	
+
 	@Test
 	public void consultarDisponibilidadValidoTest() {
 		Reservas reservas = insertarCuatro();
@@ -434,7 +433,7 @@ public class ReservasTest {
 		assertTrue(reservas.consultarDisponibilidad(aula, PERMANENCIA1));
 		assertTrue(reservas.consultarDisponibilidad(aula, permanencia));
 	}
-	
+
 	@Test
 	public void consultarDisponibilidadNoValidoTest() {
 		Reservas reservas = insertarCuatro();
@@ -451,5 +450,4 @@ public class ReservasTest {
 			assertEquals("No se puede consultar la disponibilidad de una permanencia nula.", e.getMessage());
 		}
 	}
-*/
 }
