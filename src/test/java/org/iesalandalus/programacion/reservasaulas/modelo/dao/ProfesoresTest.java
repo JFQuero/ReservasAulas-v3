@@ -247,4 +247,5 @@ public class ProfesoresTest {
 		assertEquals(profesor2.toString(), representacion.get(1));
 		assertEquals(profesor3.toString(), representacion.get(2));
 	}
+	
 }
