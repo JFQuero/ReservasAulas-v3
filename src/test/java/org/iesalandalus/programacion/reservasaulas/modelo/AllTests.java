@@ -1,6 +1,6 @@
 package org.iesalandalus.programacion.reservasaulas.modelo;
 
-/**
+
 import org.iesalandalus.programacion.reservasaulas.modelo.dominio.*;
 import org.iesalandalus.programacion.reservasaulas.modelo.dominio.permanencia.*;
 import org.iesalandalus.programacion.reservasaulas.modelo.dao.*;
@@ -15,4 +15,3 @@ import org.junit.runners.Suite.SuiteClasses;
 public class AllTests {
 
 }
-**/

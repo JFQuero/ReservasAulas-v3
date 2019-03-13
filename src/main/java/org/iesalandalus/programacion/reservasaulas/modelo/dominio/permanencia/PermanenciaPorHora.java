@@ -1,10 +1,10 @@
 package org.iesalandalus.programacion.reservasaulas.modelo.dominio.permanencia;
 
 import java.time.LocalDate;
+
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
-import java.util.Objects;
 
 public class PermanenciaPorHora extends Permanencia {
 

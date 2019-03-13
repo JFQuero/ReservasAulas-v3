@@ -120,7 +120,6 @@ public class Aulas {
 			System.out.println("No se ha podido crear el fichero de Aulas.");
 		} catch (IOException e) {
 			System.out.println("Error inesperado de E/S.");
-			e.printStackTrace();
 		}
 	}
 }
