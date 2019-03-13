@@ -1,5 +1,5 @@
 package org.iesalandalus.programacion.reservasaulas.modelo.dominio;
-/*
+
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertNull;
@@ -7,12 +7,12 @@ import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
 import org.junit.Test;
-*/
+
 public class AulaTest {
-/*	
+
 	private static final String ERROR_EXCEPCION = "Debería haber saltado la excepción.";
 	private static final String ERROR_NO_EXCEPCION = "No debería haber saltado la excepción.";
-	
+
 	private static final String NOMBRE = "Salón de actos";
 	private static final int PUESTOS = 30;
 
@@ -28,7 +28,7 @@ public class AulaTest {
 			fail(ERROR_NO_EXCEPCION);
 		}
 	}
-	
+
 	@Test
 	public void constructorNoValidoTest() {
 		Aula aula = null;
@@ -62,7 +62,7 @@ public class AulaTest {
 			assertNull(aula);
 		}
 	}
-	
+
 	@Test
 	public void constructorCopiaValidoTest() {
 		Aula aula = new Aula(NOMBRE, PUESTOS);
@@ -76,7 +76,7 @@ public class AulaTest {
 			fail(ERROR_NO_EXCEPCION);
 		}
 	}
-	
+
 	@Test
 	public void constructorCopiaNoValidoTest() {
 		Aula aula = null;
@@ -89,14 +89,14 @@ public class AulaTest {
 			assertNull(aula);
 		}
 	}
-	
+
 	@Test
 	public void getTest() {
 		Aula aula = new Aula(NOMBRE, PUESTOS);
 		assertEquals(NOMBRE, aula.getNombre());
 		assertEquals(PUESTOS, aula.getPuestos());
 	}
-	
+
 	@Test
 	public void hasCodeTest() {
 		Aula aula = new Aula(NOMBRE, PUESTOS);
@@ -106,7 +106,7 @@ public class AulaTest {
 		assertEquals(aula.hashCode(), aula1.hashCode());
 		assertNotEquals(aula.hashCode(), aula2.hashCode());
 	}
-	
+
 	@Test
 	public void equalTest() {
 		Aula aula = new Aula(NOMBRE, PUESTOS);
@@ -118,11 +118,11 @@ public class AulaTest {
 		assertEquals(aula, aula1);
 		assertNotEquals(aula, aula2);
 	}
-	
+
 	@Test
 	public void toStringTest() {
 		Aula aula = new Aula(NOMBRE, PUESTOS);
 		assertEquals("[nombre=Salón de actos, puestos=30]", aula.toString());
 	}
-*/
+
 }

@@ -1,5 +1,5 @@
 package org.iesalandalus.programacion.reservasaulas.modelo.dominio;
-/*
+
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.assertNotEquals;
@@ -14,12 +14,12 @@ import org.iesalandalus.programacion.reservasaulas.modelo.dominio.permanencia.Pe
 import org.iesalandalus.programacion.reservasaulas.modelo.dominio.permanencia.PermanenciaPorTramo;
 import org.iesalandalus.programacion.reservasaulas.modelo.dominio.permanencia.Tramo;
 import org.junit.Test;
-*/
+
 public class ReservaTest {
-/*	
+
 	private static final String ERROR_EXCEPCION = "Debería haber saltado la excepción.";
 	private static final String ERROR_NO_EXCEPCION = "No debería haber saltado la excepción.";
-	
+
 	private static final String NOMBRE_PROFESOR = "José Ramón";
 	private static final String CORREO = "joseramon.jimenez@iesalandalus.org";
 	private static final String NOMBRE_AULA = "Salón de actos";
@@ -65,7 +65,7 @@ public class ReservaTest {
 			fail(ERROR_NO_EXCEPCION);
 		}
 	}
-	
+
 	@Test
 	public void constructorNoValidoTest() {
 		Reserva reserva = null;
@@ -91,7 +91,7 @@ public class ReservaTest {
 			assertNull(reserva);
 		}
 	}
-	
+
 	@Test
 	public void constructorCopiaValidoTest() {
 		Reserva reserva = new Reserva(PROFESOR, AULA, PERMANENCIA_POR_TRAMO);
@@ -105,7 +105,7 @@ public class ReservaTest {
 			fail(ERROR_NO_EXCEPCION);
 		}
 	}
-	
+
 	@Test
 	public void constructorCopiaNoValidoTest() {
 		Reserva reserva = null;
@@ -117,7 +117,7 @@ public class ReservaTest {
 			assertNull(reserva);
 		}
 	}
-	
+
 	@Test
 	public void getTest() {
 		Reserva reserva = new Reserva(PROFESOR, AULA, PERMANENCIA_POR_TRAMO);
@@ -125,19 +125,19 @@ public class ReservaTest {
 		assertEquals(AULA, reserva.getAula());
 		assertEquals(PERMANENCIA_POR_TRAMO, reserva.getPermanencia());
 	}
-	
+
 	@Test
 	public void equalTest() {
 		Reserva reserva = new Reserva(PROFESOR, AULA, PERMANENCIA_POR_TRAMO);
 		Reserva reserva1 = new Reserva(reserva);
-		Reserva reserva2 = new Reserva(PROFESOR, new Aula("Aula" ,15), PERMANENCIA_POR_TRAMO);
+		Reserva reserva2 = new Reserva(PROFESOR, new Aula("Aula", 15), PERMANENCIA_POR_TRAMO);
 		assertNotEquals(reserva, null);
 		assertNotEquals(reserva, "");
 		assertEquals(reserva, reserva);
 		assertEquals(reserva1, reserva);
 		assertNotEquals(reserva, reserva2);
 	}
-	
+
 	@Test
 	public void hashCodeTest() {
 		Reserva reserva = new Reserva(PROFESOR, AULA, PERMANENCIA_POR_TRAMO);
@@ -147,14 +147,15 @@ public class ReservaTest {
 		assertEquals(reserva1.hashCode(), reserva.hashCode());
 		assertNotEquals(reserva.hashCode(), reserva2.hashCode());
 	}
-	
+
 	@Test
 	public void toStringTest() {
 		Reserva reserva = new Reserva(PROFESOR, AULA, PERMANENCIA_POR_TRAMO);
 		DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 		String cadenaEsperada = "[profesor=[nombre=José Ramón, correo=joseramon.jimenez@iesalandalus.org]"
-				+ ", aula=[nombre=Salón de actos, puestos=30], permanencia=[dia="+ DIA.format(formato) + ", tramo=Mañana], puntos=25.0]";
+				+ ", aula=[nombre=Salón de actos, puestos=30], permanencia=[dia=" + DIA.format(formato)
+				+ ", tramo=Mañana], puntos=25.0]";
 		assertEquals(cadenaEsperada, reserva.toString());
 	}
-*/
+
 }
