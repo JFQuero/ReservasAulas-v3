@@ -1,12 +1,13 @@
 package org.iesalandalus.programacion.reservasaulas.modelo.dominio.permanencia;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 
-public class PermanenciaPorHora extends Permanencia {
+public class PermanenciaPorHora extends Permanencia implements Serializable {
 
 	private static final int PUNTOS = 3;
 	private static final int HORA_INICIO = 8;
