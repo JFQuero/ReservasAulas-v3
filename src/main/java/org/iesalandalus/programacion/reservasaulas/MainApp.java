@@ -13,7 +13,7 @@ public class MainApp {
 
 	public static void main(String[] args) {
 		Consola.mostrarCabecera("Programa para la gestión de reservas de espacios del IES Al-Ándalus");
-		Consola.mostrarCabecera("Juan Fernandez Quero - 1ºDAM");
+		Consola.mostrarCabecera("Juan Fernández Quero - 1ºDAM");
 		IVistaReservasAulas vista = new VistaReservasAulas();
 		IModeloReservasAulas modelo = new ModeloReservasAulas();
 		IControladorReservasAulas controlador = new ControladorReservasAulas(vista, modelo);
