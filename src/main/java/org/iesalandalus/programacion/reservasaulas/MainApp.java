@@ -12,7 +12,7 @@ import org.iesalandalus.programacion.reservasaulas.vista.VistaReservasAulas;
 public class MainApp {
 
 	public static void main(String[] args) {
-		Consola.mostrarCabecera("Programa para la gestión de reservas de espacios del IES Al-Ándalus");
+		Consola.mostrarCabecera("Programa para la gestión de reservas de aulas del IES Al-Ándalus");
 		Consola.mostrarCabecera("Juan Fernández Quero - 1ºDAM");
 		IVistaReservasAulas vista = new VistaReservasAulas();
 		IModeloReservasAulas modelo = new ModeloReservasAulas();
