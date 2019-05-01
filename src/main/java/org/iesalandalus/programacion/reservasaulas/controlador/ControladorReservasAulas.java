@@ -35,7 +35,7 @@ public class ControladorReservasAulas implements IControladorReservasAulas {
 		modelo.escribirProfesores();
 		modelo.escribirAulas();
 		modelo.escribirReservas();
-		vista.salir();
+		System.out.println("Adios! o/ ");
 	}
 
 	@Override
@@ -57,6 +57,11 @@ public class ControladorReservasAulas implements IControladorReservasAulas {
 	public List<String> representarAulas() {
 		return modelo.representarAulas();
 	}
+	
+	@Override
+	public List<Aula> getAulas(){
+		return modelo.getAulas();		
+	}
 
 	@Override
 	public void insertarProfesor(Profesor profesor) throws OperationNotSupportedException {
@@ -77,6 +82,11 @@ public class ControladorReservasAulas implements IControladorReservasAulas {
 	public List<String> representarProfesores() {
 		return modelo.representarProfesores();
 	}
+	
+	@Override
+	public List<Profesor> getProfesores(){
+		return modelo.getProfesores();		
+	}
 
 	@Override
 	public void realizarReserva(Reserva reserva) throws OperationNotSupportedException {
@@ -91,6 +101,11 @@ public class ControladorReservasAulas implements IControladorReservasAulas {
 	@Override
 	public List<String> representarReservas() {
 		return modelo.representarReservas();
+	}
+	
+	@Override
+	public List<Reserva> getReservas(){
+		return modelo.getReservas();		
 	}
 
 	@Override

@@ -38,12 +38,10 @@ public class VistaReservasAulas implements IVistaReservasAulas {
 		} while (ordinalOpcion != Opcion.SALIR.ordinal());
 	}
 
-	@Override
 	public void salir() {
-		System.out.println("Adios! o/ ");
+		controlador.salir();
 	}
 
-	@Override
 	public void insertarAula() {
 		Consola.mostrarCabecera("Insertar Aula");
 		try {
@@ -55,7 +53,6 @@ public class VistaReservasAulas implements IVistaReservasAulas {
 		}
 	}
 
-	@Override
 	public void borrarAula() {
 		Consola.mostrarCabecera("Borrar Aula");
 		try {
@@ -72,7 +69,6 @@ public class VistaReservasAulas implements IVistaReservasAulas {
 		}
 	}
 
-	@Override
 	public void buscarAula() {
 		Consola.mostrarCabecera("Buscar Aula");
 		try {
@@ -89,7 +85,6 @@ public class VistaReservasAulas implements IVistaReservasAulas {
 		}
 	}
 
-	@Override
 	public void listarAulas() {
 		Consola.mostrarCabecera("Listar Aulas");
 		List<String> aulas = controlador.representarAulas();
@@ -102,7 +97,6 @@ public class VistaReservasAulas implements IVistaReservasAulas {
 		}
 	}
 
-	@Override
 	public void insertarProfesor() {
 		Consola.mostrarCabecera("Insertar Profesor");
 		try {
@@ -114,7 +108,6 @@ public class VistaReservasAulas implements IVistaReservasAulas {
 		}
 	}
 
-	@Override
 	public void borrarProfesor() {
 		Consola.mostrarCabecera("Borrar Profesor");
 		try {
@@ -131,7 +124,6 @@ public class VistaReservasAulas implements IVistaReservasAulas {
 		}
 	}
 
-	@Override
 	public void buscarProfesor() {
 		Consola.mostrarCabecera("Buscar Profesor");
 		try {
@@ -148,7 +140,6 @@ public class VistaReservasAulas implements IVistaReservasAulas {
 		}
 	}
 
-	@Override
 	public void listarProfesores() {
 		Consola.mostrarCabecera("Listar Profesores");
 		List<String> profesores = controlador.representarProfesores();
@@ -161,7 +152,6 @@ public class VistaReservasAulas implements IVistaReservasAulas {
 		}
 	}
 
-	@Override
 	public void realizarReserva() {
 		Consola.mostrarCabecera("Realizar Reserva");
 		try {
@@ -180,7 +170,6 @@ public class VistaReservasAulas implements IVistaReservasAulas {
 		return new Reserva(profesor, aula, permanencia);
 	}
 
-	@Override
 	public void anularReserva() {
 		Consola.mostrarCabecera("Anular una Reserva");
 		try {
@@ -193,7 +182,6 @@ public class VistaReservasAulas implements IVistaReservasAulas {
 		}
 	}
 
-	@Override
 	public void listarReservas() {
 		Consola.mostrarCabecera("Listar Reservas");
 		try {
@@ -210,7 +198,6 @@ public class VistaReservasAulas implements IVistaReservasAulas {
 		}
 	}
 
-	@Override
 	public void listarReservasAula() {
 		Consola.mostrarCabecera("Listar reservas de un aula");
 		try {
@@ -231,7 +218,6 @@ public class VistaReservasAulas implements IVistaReservasAulas {
 		}
 	}
 
-	@Override
 	public void listarReservasProfesor() {
 		Consola.mostrarCabecera("Listar reservas de un profesor");
 		try {
@@ -252,7 +238,6 @@ public class VistaReservasAulas implements IVistaReservasAulas {
 		}
 	}
 
-	@Override
 	public void listarReservasPermanencia() {
 		Consola.mostrarCabecera("Listar reservas de una permanencia");
 		try {
@@ -270,7 +255,6 @@ public class VistaReservasAulas implements IVistaReservasAulas {
 		}
 	}
 
-	@Override
 	public void consultarDisponibilidad() {
 		Consola.mostrarCabecera("Consultar Disponibilidad");
 		try {
